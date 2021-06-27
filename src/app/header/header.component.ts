@@ -14,9 +14,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  search($event: any) {
+  highlightTitle = false;
+  fontSize = 24;
+
+  search($event: MouseEvent) {
     console.log($event);
-    this.keyword = $event;
+
+    this.highlightTitle = !this.highlightTitle;
+    this.fontSize++;
   }
 
 }
