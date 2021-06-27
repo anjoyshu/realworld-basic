@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  keyword = '';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -14,6 +16,7 @@ export class HeaderComponent implements OnInit {
 
   search($event: any) {
     console.log($event);
+    this.keyword = $event;
   }
 
 }
