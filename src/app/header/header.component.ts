@@ -1,3 +1,4 @@
+import { ArticlesService } from './../articles.service';
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   keyword = '';
 
-  constructor() { }
+  constructor(private articlesService: ArticlesService) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +21,7 @@ export class HeaderComponent implements OnInit {
   fontSize = 24;
 
   search($event: MouseEvent) {
-    this.keywordChange.emit(this.keyword);
+    this.articlesService.searchArticles(this.keyword);
   }
 
 }
